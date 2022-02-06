@@ -30,7 +30,7 @@ export class ProfileComponent implements OnInit {
   ngOnInit(): void {
     this.getProfilePicture();
     this.editForm = this.fb.group({
-      description: new FormControl('', [Validators.required, Validators.maxLength(100)]),
+      description: new FormControl('', [Validators.required, Validators.maxLength(400)]),
       username: new FormControl('', Validators.required),
       age: new FormControl('', [Validators.min(13), Validators.max(99)]),
       hoursPlayed: new FormControl('', [Validators.min(0)])
@@ -58,8 +58,10 @@ export class ProfileComponent implements OnInit {
         });
         this.firestore.collection('users').doc(res.uid).get().toPromise().then(result => {
           this.editForm.controls['username'].setValue(result!.get("username"));
+          this.editForm.controls['description'].setValue(result!.get("description"));
           this.editForm.controls['age'].setValue(result!.get("age"));
           this.editForm.controls['hoursPlayed'].setValue(result!.get("hoursPlayed"));
+    
         })
       }
     });
