@@ -1,0 +1,56 @@
+<mat-card class = "form" *ngIf ="(user|async) && !isShown">
+    <mat-card-content >
+            <img class= "profilePicture" [src] = "currentProfilePicture">
+            <mat-label class="form-field"><b>Username:</b> {{(user|async)?.Username}}</mat-label>
+            <mat-divider></mat-divider>
+            <mat-label class="form-field" >{{(user|async)?.Description}}</mat-label>
+            <mat-divider></mat-divider>
+            <mat-label class="form-field" ><b>Age:</b>{{(user|async)?.Age}}</mat-label>
+            <mat-divider></mat-divider>
+            <mat-label class="form-field" > <b>Hours played:</b>  {{(user|async)?.HoursPlayed}}</mat-label>
+            <mat-divider></mat-divider>
+            <mat-label class="form-field" >{{(user|async)?.Email}}</mat-label>
+            <mat-divider></mat-divider>
+        <mat-card-actions class= "form-buttons">
+            <button class = "form-buttons" mat-flat-button color = "warn" (click) = "toggleShow()">Edit Profile</button>
+            <div>
+            <button mat-flat-button color="primary"></button>
+            <button (click)= "addProfilePicture()" mat-flat-button color="primary">Add Profile Picture</button>
+            <label for = "photo-upload">
+                <input #photoSelector (change)= "onPhotoSelected(photoSelector)" id="photo-upload" type="file" accept="image/*" />
+                <mat-icon>insert_photo</mat-icon>
+            </label>
+            </div>
+    
+        </mat-card-actions>       
+    </mat-card-content>
+</mat-card>
+
+<mat-card *ngIf = "isShown">
+    <form class="form" [formGroup]= "editForm">
+        <mat-card-title>Edit Your Profile</mat-card-title>
+        <br>
+        <mat-form-field appearance="fill" class="form-field">
+            <mat-label>Username</mat-label>
+            <input type="text" value = {{(user|async)?.Username}} matInput formControlName="username">
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="fill" class="form-field">
+            <mat-label>Description</mat-label>
+            <input type="text" value ={{(user|async)?.Description}} matInput formControlName="description">
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="fill" class="form-field">
+            <mat-label>Age</mat-label>
+            <input type="text" value = {{(user|async)?.Age}} matInput formControlName="age">
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="fill" class="form-field">
+            <mat-label>HoursPlayed</mat-label>
+            <input type="text" value ={{(user|async)?.HoursPlayed}} matInput formControlName="hoursPlayed">
+        </mat-form-field>
+        <mat-card-actions class="form-buttons">
+            <button color="primary" type="button" mat-raised-button (click)= "toggleShow(); editProfile()">Done</button>
+        </mat-card-actions>
+    </form>
+</mat-card>

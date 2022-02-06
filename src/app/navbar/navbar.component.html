@@ -1,0 +1,13 @@
+<mat-toolbar color = "primary">
+<span>Stardew Valley</span>
+<img class = "navbar_img" src="assets/Logo.png">
+<div class = "spacer"></div>
+<a mat-button routerLink = "home">Home</a>
+<a mat-button routerLink = "profile">Profile</a>
+<a mat-button routerLink = "discussion">Discussion</a>
+<a mat-button>FAQ</a>
+<a mat-button routerLink = "sign-in" *ngIf = "!isSignedIn">Sign In</a>
+<a mat-button routerLink = "sign-up" *ngIf = "!isSignedIn">Sign Up</a>
+<a mat-button *ngIf = "isSignedIn" (click) = "logout()" routerLink = "home">Logout</a>
+</mat-toolbar>
+  

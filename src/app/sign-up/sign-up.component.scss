@@ -1,0 +1,28 @@
+:host{
+    display: flex;
+    align-items: left;
+    justify-content: left;
+    margin-top: 100px;
+    margin-left: 100px;
+    margin-bottom: 400px;
+    height: 100vh;
+}
+
+mat-form-field.mat-form-field {
+    font-size: 16px;
+  }
+
+.form{
+    width: 20rem;
+}
+
+.form-field {
+    display: block;
+}
+
+.form-buttons{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+

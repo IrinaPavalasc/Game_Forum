@@ -1,0 +1,31 @@
+
+<mat-card>
+<form *ngIf = "!isSignedIn" class ="form" [formGroup] = "registerForm">
+    <mat-card-title>Sign Up</mat-card-title>
+    <br>
+    <mat-form-field appearance="fill" class="form-field">
+        <mat-label>Username</mat-label>
+        <input type ="text" matInput formControlName = "username"  >
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="form-field">
+        <mat-label>Description</mat-label>
+        <input type="text" matInput formControlName= "description">
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="form-field">
+        <mat-label>Age</mat-label>
+        <input type="number" matInput formControlName="age">
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="form-field">
+        <mat-label>Email</mat-label>
+        <input type ="email" matInput formControlName = "email">
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="form-field">
+        <mat-label>Password</mat-label>
+        <input type ="password" matInput formControlName = "password"  >
+    </mat-form-field>
+    <mat-card-actions class= "form-buttons">
+        <button color ="primary" type ="button" mat-raised-button  (click) = "onSignup()" >Submit</button>
+        <button color = "secondary" routerLink= '../sign-in' mat-raised-button>Login Instead</button>
+    </mat-card-actions> 
+</form>
+</mat-card>
