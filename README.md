@@ -1,27 +1,25 @@
-# ProiectFinal
+# Stardew Valley Game Forum
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.3.
+## About
+This application was created using Angular and Firebase, as the final project to a Advanced Front-End college course.
+It follows the structure of a forum, based around the game Stardew Valley.
 
-## Development server
+## Features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### Public Home Page
 
-## Code scaffolding
+For game description and related announcements.
+![Game_Forum1](https://user-images.githubusercontent.com/61749906/155386614-6751cea1-b2ae-4b1e-9062-fac8efdc09e7.png)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Registration and Authentication
 
-## Build
+![Game_Forum2](https://user-images.githubusercontent.com/61749906/155386882-8cdb1546-e682-48e6-a16f-33247bafbf67.png)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### User Profile
 
-## Running unit tests
+![Game_Forum3](https://user-images.githubusercontent.com/61749906/155386922-30f4f43b-8d3e-47fc-82ee-e92b35f549bc.png)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Discussion Page
+Only Available if logged in.
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+![Game_Forum4](https://user-images.githubusercontent.com/61749906/155387102-bc725c5b-b6e4-4d08-a3f8-c295cce48660.png)
